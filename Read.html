@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BenevolentGemini Infographic</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            background-color: #0d1117;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            padding: 40px 20px;
+        }
+        .infographic-container {
+            width: 850px;
+            background: linear-gradient(145deg, #161b22, #0d1117);
+            border: 1px solid #30363d;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+            color: #c9d1d9;
+        }
+        .header {
+            background: linear-gradient(90deg, #238636, #2ea043);
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+        }
+        .header h1 {
+            font-size: 2.8em;
+            margin-bottom: 10px;
+            font-weight: 800;
+            letter-spacing: -1px;
+        }
+        .header p {
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+        .section {
+            padding: 30px 40px;
+            border-bottom: 1px solid #30363d;
+        }
+        .section:last-child {
+            border-bottom: none;
+        }
+        .section-title {
+            display: flex;
+            align-items: center;
+            font-size: 1.8em;
+            color: #58a6ff;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+        .section-title span {
+            font-size: 1.3em;
+            margin-right: 15px;
+        }
+        .step-box {
+            background: #21262d;
+            border: 1px solid #30363d;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 15px;
+        }
+        .step-box h3 {
+            color: #f0f6fc;
+            margin-bottom: 10px;
+            font-size: 1.2em;
+        }
+        .code-block {
+            background: #0d1117;
+            padding: 12px;
+            border-radius: 6px;
+            font-family: 'Courier New', Courier, monospace;
+            color: #79c0ff;
+            font-size: 1.1em;
+            border: 1px solid #30363d;
+            margin-top: 10px;
+        }
+        .highlight {
+            color: #a5d6ff;
+            font-weight: bold;
+        }
+        .footer {
+            text-align: center;
+            padding: 20px;
+            background: #161b22;
+            font-size: 0.9em;
+            color: #8b949e;
+        }
+        .flex-row {
+            display: flex;
+            gap: 20px;
+        }
+        .flex-col {
+            flex: 1;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="infographic-container">
+        
+        <!-- HEADER -->
+        <div class="header">
+            <h1>BenevolentGemini</h1>
+            <p>A lightning-fast, zero-bloat AI client for Windows, Linux & Raspberry Pi.</p>
+            <p style="margin-top: 10px; font-size: 1em; opacity: 0.8;">Made by Dr. Bishnu Goswami</p>
+        </div>
+
+        <!-- API KEY SECTION -->
+        <div class="section">
+            <div class="section-title">
+                <span>🔑</span> Step 1: Get Your API Key
+            </div>
+            <div class="step-box">
+                <p>Before running the app, you need a key to connect to Google's AI servers.</p>
+                <ul style="margin-top: 15px; margin-left: 20px; line-height: 1.6;">
+                    <li>Visit <strong>aistudio.google.com</strong> and sign in with your Google account.</li>
+                    <li>Click <strong>"Get API key"</strong> in the left-hand navigation menu.</li>
+                    <li>Choose the <strong>Free Tier</strong> (generous limits) or Paid Tier (for heavy processing).</li>
+                    <li>Copy your key! You will paste this directly into the BenevolentGemini app menu.</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- PLATFORM SECTIONS -->
+        <div class="section flex-row">
+            
+            <!-- WINDOWS -->
+            <div class="flex-col">
+                <div class="section-title">
+                    <span>🪟</span> Windows
+                </div>
+                <div class="step-box">
+                    <h3>Option A: The Easy Way</h3>
+                    <p>Simply download the <strong>BenevolentGemini.exe</strong> file and double-click it. No installation required!</p>
+                </div>
+                <div class="step-box">
+                    <h3>Option B: Python (For Devs)</h3>
+                    <p>1. Install Python (Check "Add to PATH").</p>
+                    <p>2. Open Command Prompt and run:</p>
+                    <div class="code-block">pip install PyQt5 pillow google-genai</div>
+                    <p style="margin-top: 10px;">3. Launch the app:</p>
+                    <div class="code-block">python gemini_gui.py</div>
+                </div>
+            </div>
+
+            <!-- LINUX & PI -->
+            <div class="flex-col">
+                <div class="section-title">
+                    <span>🐧</span> Linux & Pi 3+
+                </div>
+                <div class="step-box">
+                    <p>Native performance requires native libraries. Install them via your terminal.</p>
+                    <br>
+                    <h3>1. Install GUI Libraries</h3>
+                    <div class="code-block">sudo apt update<br>sudo apt install python3-pyqt5 python3-pip</div>
+                    <br>
+                    <h3>2. Install Python Tools</h3>
+                    <div class="code-block">pip3 install pillow google-genai</div>
+                    <p style="font-size: 0.85em; color: #8b949e; margin-top: 5px;">*If you get an environment error, add <span class="highlight">--break-system-packages</span></p>
+                    <br>
+                    <h3>3. Launch the App</h3>
+                    <div class="code-block">python3 gemini_gui.py</div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- FOOTER -->
+        <div class="footer">
+            Designed for performance & readability. Features Intelligent Grayscale, PDF export, and automatic chat memory.
+        </div>
+
+    </div>
+
+</body>
+</html>

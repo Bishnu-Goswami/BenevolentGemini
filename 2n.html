@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BenevolentGemini Features Infographic</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            background-color: #0b1120;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            padding: 40px 20px;
+            color: #f8fafc;
+        }
+        .infographic {
+            width: 900px;
+            background: linear-gradient(135deg, #0f172a, #020617);
+            border: 1px solid #334155;
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7);
+        }
+        .hero {
+            text-align: center;
+            padding: 50px 30px;
+            background: radial-gradient(circle at top, #1e293b, transparent);
+            border-bottom: 1px solid #334155;
+        }
+        .hero h1 {
+            font-size: 3.5em;
+            font-weight: 900;
+            background: linear-gradient(to right, #38bdf8, #818cf8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 25px;
+            letter-spacing: -1px;
+        }
+        .multilingual-taglines {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            font-size: 1.15em;
+            font-weight: 500;
+            color: #cbd5e1;
+        }
+        .lang-label {
+            font-size: 0.75em;
+            color: #64748b;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-right: 10px;
+        }
+        
+        /* Features Grid */
+        .features-section {
+            padding: 40px;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+        }
+        .feature-card {
+            background: #1e293b;
+            border: 1px solid #334155;
+            border-radius: 16px;
+            padding: 25px;
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+        }
+        .feature-icon {
+            font-size: 2.5em;
+            line-height: 1;
+        }
+        .feature-text h3 {
+            font-size: 1.3em;
+            color: #f1f5f9;
+            margin-bottom: 8px;
+        }
+        .feature-text p {
+            color: #94a3b8;
+            font-size: 1em;
+            line-height: 1.4;
+        }
+
+        /* Themes Section */
+        .themes-section {
+            padding: 0 40px 50px 40px;
+        }
+        .themes-title {
+            text-align: center;
+            font-size: 1.8em;
+            margin-bottom: 30px;
+            color: #f8fafc;
+            font-weight: 600;
+        }
+        .themes-row {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+        }
+        .theme-box {
+            flex: 1;
+            border-radius: 12px;
+            padding: 20px 15px;
+            text-align: center;
+            font-size: 0.9em;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
+        }
+        .theme-box span {
+            display: block;
+            margin-top: 10px;
+            font-size: 1.5em;
+        }
+        
+        /* Specific Theme Colors (Matching your App) */
+        .theme-classic { background: #ffffff; color: #000000; border: 1px solid #cccccc; }
+        .theme-night { background: #1e1e1e; color: #d4d4d4; border: 1px solid #3e3e42; }
+        .theme-gray { background: #efefef; color: #1c1c1c; border: 1px solid #b0b0b0; font-weight: 500; }
+        .theme-sepia { background: #f6eedb; color: #3b2f2f; border: 1px solid #c2b090; font-weight: 500; }
+        .theme-contrast { background: #000000; color: #ffffff; border: 3px solid #ffffff; font-weight: bold; }
+
+        .footer {
+            background: #020617;
+            padding: 20px;
+            text-align: center;
+            color: #64748b;
+            border-top: 1px solid #334155;
+            font-size: 1.1em;
+        }
+        .footer strong {
+            color: #cbd5e1;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="infographic">
+        
+        <!-- Hero / Taglines -->
+        <div class="hero">
+            <h1>BenevolentGemini</h1>
+            
+            <div class="multilingual-taglines">
+                <p><span class="lang-label">EN</span> Made for digital inclusivity and universal access.</p>
+                <p><span class="lang-label">HI</span> डिजिटल समावेशन और सार्वभौमिक पहुंच के लिए निर्मित।</p>
+                <p><span class="lang-label">ES</span> Creado para la inclusión digital y el acceso universal.</p>
+                <p><span class="lang-label">ZH</span> 专为数字包容和普及访问而设计。</p>
+            </div>
+        </div>
+
+        <!-- Core Features Grid -->
+        <div class="features-section">
+            <div class="grid">
+                
+                <div class="feature-card">
+                    <div class="feature-icon">⚡</div>
+                    <div class="feature-text">
+                        <h3>Lightning Fast</h3>
+                        <p>Optimized to run seamlessly even on ultra-weak computers or aging hardware. Zero bloat, instant response.</p>
+                    </div>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">💰</div>
+                    <div class="feature-text">
+                        <h3>Hardware Prices Won't Matter</h3>
+                        <p>Don't buy a new PC. By bypassing heavy browsers, this app brings cutting-edge AI directly to the machine you already own.</p>
+                    </div>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">👁️</div>
+                    <div class="feature-text">
+                        <h3>Adjustable Text Size</h3>
+                        <p>Fully scalable fonts from 8pt to 32pt. Designed to prevent eye strain and accommodate all visual needs instantly.</p>
+                    </div>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">🧠</div>
+                    <div class="feature-text">
+                        <h3>Multi-Turn Memory</h3>
+                        <p>Your chats save automatically to plain Markdown files. Load them back up weeks later and the AI remembers everything.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Readability Themes -->
+        <div class="themes-section">
+            <div class="themes-title">5 Native Readability Profiles</div>
+            
+            <div class="themes-row">
+                <div class="theme-box theme-classic">
+                    <strong>Classic Light</strong>
+                    <span>📄</span>
+                </div>
+                
+                <div class="theme-box theme-night">
+                    <strong>Night Mode</strong>
+                    <span>🌙</span>
+                </div>
+                
+                <div class="theme-box theme-gray">
+                    <strong>Intelligent Grayscale</strong>
+                    <span>📰</span>
+                </div>
+                
+                <div class="theme-box theme-sepia">
+                    <strong>Warm Sepia</strong>
+                    <span>☕</span>
+                </div>
+                
+                <div class="theme-box theme-contrast">
+                    <strong>High Contrast</strong>
+                    <span>⬛</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            Developed & Designed by <strong>Dr. Bishnu Goswami</strong>
+        </div>
+
+    </div>
+
+</body>
+</html>
