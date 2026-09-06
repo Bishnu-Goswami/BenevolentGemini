@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BenevolentGemini by Dr. Bishnu Goswami</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            background-color: #f4ecd8; /* Sepia base */
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            padding: 40px 20px;
+            color: #3b2f2f;
+            line-height: 1.6;
+        }
+        .container {
+            width: 100%;
+            max-width: 950px;
+            background: linear-gradient(135deg, #faebd7, #f5deb3);
+            border: 1px solid #deb887;
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 25px 50px -12px rgba(92, 64, 51, 0.2);
+        }
+        
+        /* --- HERO SECTION --- */
+        .hero {
+            text-align: center;
+            padding: 60px 40px 40px 40px;
+            background: radial-gradient(circle at top, #fff3e0, transparent);
+            border-bottom: 1px solid #deb887;
+        }
+        .hero h1 {
+            /* Using clamp ensures it shrinks properly on phones without getting cut off */
+            font-size: clamp(2.2em, 8vw, 3.8em); 
+            font-weight: 900;
+            color: #5c4033; /* Solid deep sepia brown */
+            margin-bottom: 25px;
+            letter-spacing: -1px;
+            line-height: 1.1;
+        }
+        .multilingual-taglines {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            font-size: 1.15em;
+            font-weight: 500;
+            color: #5c4033;
+            margin-bottom: 35px;
+        }
+        .lang-label {
+            font-size: 0.75em;
+            color: #8b4513;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-right: 10px;
+        }
+        .download-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 20px;
+            flex-wrap: wrap; /* Allows buttons to stack on phones */
+        }
+        .btn {
+            text-decoration: none;
+            padding: 14px 28px;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 1.1em;
+            transition: transform 0.2s, filter 0.2s;
+            text-align: center;
+        }
+        .btn:hover {
+            transform: translateY(-2px);
+            filter: brightness(1.05);
+        }
+        .btn-tertiary {
+            background: linear-gradient(90deg, #d2691e, #cd853f);
+            color: white;
+            box-shadow: 0 4px 15px rgba(210, 105, 30, 0.3);
+        }
+        .btn-primary {
+            background: linear-gradient(90deg, #8b4513, #a0522d);
+            color: white;
+            box-shadow: 0 4px 15px rgba(139, 69, 19, 0.3);
+        }
+        .btn-secondary {
+            background: #ffe4c4;
+            color: #3b2f2f;
+            border: 1px solid #cd853f;
+        }
+        .web-experience-note {
+            margin-top: 15px;
+            color: #8b4513;
+            font-size: 1em;
+            font-weight: 500;
+        }
+
+        /* --- FEATURES SECTION --- */
+        .section-header {
+            text-align: center;
+            font-size: 2em;
+            color: #8b4513;
+            margin-bottom: 30px;
+            font-weight: 700;
+        }
+        .features-section {
+            padding: 50px 40px;
+            border-bottom: 1px solid #deb887;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+        }
+        .feature-card {
+            background: #ffefd5;
+            border: 1px solid #deb887;
+            border-radius: 16px;
+            padding: 25px;
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+        }
+        .feature-card.full-width {
+            grid-column: 1 / -1;
+            background: linear-gradient(145deg, #ffefd5, #faebd7);
+            border-color: #cd853f;
+        }
+        .feature-icon {
+            font-size: 2.5em;
+            line-height: 1;
+        }
+        .feature-text h3 {
+            font-size: 1.3em;
+            color: #5c4033;
+            margin-bottom: 8px;
+        }
+        .feature-text p {
+            color: #4a3728;
+            font-size: 1.05em;
+        }
+        .feature-note {
+            font-size: 0.9em;
+            color: #8b4513;
+            margin-top: 8px;
+            display: block;
+            font-style: italic;
+        }
+
+        /* --- THEMES SECTION --- */
+        .themes-section {
+            padding: 50px 40px;
+            border-bottom: 1px solid #deb887;
+        }
+        .themes-row {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .theme-box {
+            flex: 1;
+            min-width: 140px;
+            border-radius: 12px;
+            padding: 20px 15px;
+            text-align: center;
+            font-size: 0.95em;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 6px -1px rgba(92, 64, 51, 0.15);
+        }
+        .theme-box span {
+            display: block;
+            margin-top: 10px;
+            font-size: 1.8em;
+        }
+        .theme-classic { background: #ffffff; color: #000000; border: 1px solid #cccccc; }
+        .theme-night { background: #1e1e1e; color: #d4d4d4; border: 1px solid #3e3e42; }
+        .theme-gray { background: #efefef; color: #1c1c1c; border: 1px solid #b0b0b0; font-weight: 600; }
+        .theme-sepia { background: #f6eedb; color: #3b2f2f; border: 2px solid #8b4513; font-weight: bold; } /* Highlighted the sepia theme block since it's the default now */
+        .theme-contrast { background: #000000; color: #ffffff; border: 3px solid #ffffff; font-weight: bold; }
+
+        /* --- INSTALLATION SECTION --- */
+        .install-section {
+            padding: 50px 40px;
+        }
+        .step-box {
+            background: #ffefd5;
+            border: 1px solid #deb887;
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 25px;
+        }
+        .step-box h2 {
+            font-size: 1.6em;
+            color: #5c4033;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .step-box p {
+            color: #4a3728;
+            margin-bottom: 15px;
+            font-size: 1.1em;
+        }
+        .layman-note {
+            background: rgba(139, 69, 19, 0.1);
+            border-left: 4px solid #8b4513;
+            padding: 15px;
+            border-radius: 0 8px 8px 0;
+            margin: 15px 0;
+            color: #5c4033;
+            font-size: 0.95em;
+        }
+        .code-block {
+            background: #faebd7;
+            padding: 15px;
+            border-radius: 8px;
+            font-family: 'Courier New', Courier, monospace;
+            color: #8b4513;
+            font-size: 1.05em;
+            border: 1px solid #deb887;
+            margin: 10px 0;
+            overflow-x: auto;
+        }
+        .platform-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+        }
+        @media(max-width: 768px) {
+            .platform-grid { grid-template-columns: 1fr; }
+            .grid { grid-template-columns: 1fr; }
+        }
+
+        /* --- FOOTER --- */
+        .footer {
+            background: #deb887;
+            padding: 25px;
+            text-align: center;
+            color: #4a3728;
+            border-top: 1px solid #cd853f;
+            font-size: 1.1em;
+        }
+        .footer strong {
+            color: #5c4033;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        
+        <!-- HERO -->
+        <div class="hero">
+            <h1>BenevolentGemini</h1>
+            
+            <div class="multilingual-taglines">
+                <p><span class="lang-label">EN</span> Made by Dr. Bishnu Goswami for digital inclusivity and universal access.</p>
+            </div>
+
+            <div class="download-buttons">
+                <a href="https://bishnu-goswami.github.io/BenevolentGemini/web.html" class="btn btn-tertiary">🌐 Direct Web Experience</a>
+                <a href="https://github.com/Bishnu-Goswami/BenevolentGemini/releases/download/main/BenevolentGemini.exe" class="btn btn-primary">⬇️ Windows Download (.exe)</a>
+                <a href="https://github.com/Bishnu-Goswami/BenevolentGemini/blob/main/BenevolentGemini.py" class="btn btn-secondary">📜 View Python Source (.py)</a>
+            </div>
+            <p class="web-experience-note"><strong>Direct Web Experience:</strong> Instantly access and run BenevolentGemini right from your browser, no downloads or installations required!</p>
+        </div>
+
+        <!-- FEATURES -->
+        <div class="features-section">
+            <h2 class="section-header">Why Use BenevolentGemini?</h2>
+            <div class="grid">
+                
+                <div class="feature-card full-width">
+                    <div class="feature-icon">🎯</div>
+                    <div class="feature-text">
+                        <h3>Distraction-Free Learning & Research</h3>
+                        <p>Web browsers are filled with ads, tabs, and notifications designed to break your focus. This app is a closed, standalone environment that completely reduces distractions, making your learning and research smooth, deep, and entirely without interruptions.</p>
+                    </div>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">📑</div>
+                    <div class="feature-text">
+                        <h3>Tabbed Browsing & Storage Sets</h3>
+                        <p>Organize your sessions effortlessly. Use tabbed browsing to manage multiple chats, and rely on robust local storage sets to keep your different projects categorized and saved securely on your machine.</p>
+                    </div>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">📤</div>
+                    <div class="feature-text">
+                        <h3>Export to DOC & PDF</h3>
+                        <p>Seamlessly format and export your generated notes, lectures, or research directly to Microsoft Word (.doc) or standard PDF formats for easy sharing and printing.</p>
+                    </div>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">🔍</div>
+                    <div class="feature-text">
+                        <h3>Advanced Search Tools</h3>
+                        <p>Easily navigate massive chat histories.</p>
+                        <span class="feature-note">*Note: "Find Words" and "Search Chat" capabilities are exclusive to the standalone Python script and Windows (.exe) application.</span>
+                    </div>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">⚡</div>
+                    <div class="feature-text">
+                        <h3>Lightning Fast & Hardware Friendly</h3>
+                        <p>Optimized to run seamlessly even on ultra-weak computers or aging hardware. By bypassing heavy browsers, this app brings cutting-edge AI directly to the machine you already own. Don't buy a new PC.</p>
+                    </div>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">👁️</div>
+                    <div class="feature-text">
+                        <h3>Adjustable Text Size</h3>
+                        <p>Fully scalable fonts from 8pt to 32pt. Designed to prevent eye strain and accommodate all visual needs instantly.</p>
+                    </div>
+                </div>
+
+                <div class="feature-card full-width">
+                    <div class="feature-icon">🧠</div>
+                    <div class="feature-text">
+                        <h3>Multi-Turn Memory</h3>
+                        <p>Your chats save automatically to plain text files. Load them back up weeks later and the AI remembers everything.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- THEMES -->
+        <div class="themes-section">
+            <h2 class="section-header">5 Native Readability Profiles</h2>
+            
+            <div class="themes-row">
+                <div class="theme-box theme-classic">
+                    <strong>Classic Light</strong>
+                    <span>📄</span>
+                </div>
+                <div class="theme-box theme-night">
+                    <strong>Night Mode</strong>
+                    <span>🌙</span>
+                </div>
+                <div class="theme-box theme-gray">
+                    <strong>Intelligent Grayscale</strong>
+                    <span>📰</span>
+                </div>
+                <div class="theme-box theme-sepia">
+                    <strong>Warm Sepia</strong>
+                    <span>☕</span>
+                </div>
+                <div class="theme-box theme-contrast">
+                    <strong>High Contrast</strong>
+                    <span>⬛</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- INSTALLATION -->
+        <div class="install-section">
+            <h2 class="section-header">How to Install & Run</h2>
+            
+            <div class="step-box">
+                <h2><span>🔑</span> Step 1: Obtain a Free API Key</h2>
+                <div class="layman-note">
+                    <strong>What is an API Key?</strong> Think of it as a secure, free ID card that tells Google you are authorized to talk to their AI. You only have to get this once!
+                </div>
+                <p>1. Go to <strong>aistudio.google.com</strong> and sign in with your normal Google account.</p>
+                <p>2. Click the <strong>"Get API key"</strong> button on the left side of the screen.</p>
+                <p>3. Choose the <strong>Free tier</strong> (which provides plenty of usage for a single person).</p>
+                <p>4. Copy the long text password it gives you. You will paste this directly into the top of the BenevolentGemini app.</p>
+            </div>
+
+            <div class="platform-grid">
+                
+                <!-- Windows Install -->
+                <div class="step-box">
+                    <h2><span>🪟</span> For Windows Users</h2>
+                    <br>
+                    <h3 style="color: #8b4513; margin-bottom: 10px;">The Easy Way (Recommended)</h3>
+                    <p>You don't need to know anything about coding. Just scroll up to the top of this page and click the <strong>"Windows Download (.exe)"</strong> button. Once downloaded, double-click the file to open the app instantly.</p>
+                    <br><hr style="border-color: #deb887; margin: 15px 0;"><br>
+                    <h3 style="color: #8b4513; margin-bottom: 10px;">The Python Way (For Developers)</h3>
+                    <p>If you prefer running the raw code:</p>
+                    <p>1. Install Python from python.org (ensure "Add to PATH" is checked).</p>
+                    <p>2. Open Command Prompt and type:</p>
+                    <div class="code-block">pip install PyQt5 pillow google-genai</div>
+                    <p>3. Run the script:</p>
+                    <div class="code-block">python BenevolentGemini.py</div>
+                </div>
+
+                <!-- Linux/Pi Install -->
+                <div class="step-box">
+                    <h2><span>🐧</span> For Linux & Raspberry Pi</h2>
+                    <div class="layman-note">
+                        Because Linux systems are all built slightly differently, you need to run the raw Python code. Just open your <strong>Terminal</strong> (the black command window) and paste these commands exactly as shown.
+                    </div>
+                    
+                    <h3 style="color: #5c4033; margin-bottom: 10px;">1. Install the Visual Display Tools</h3>
+                    <div class="code-block">sudo apt update<br>sudo apt install python3-pyqt5 python3-pip</div>
+                    
+                    <h3 style="color: #5c4033; margin-top: 20px; margin-bottom: 10px;">2. Install the Brain & Memory Tools</h3>
+                    <div class="code-block">pip3 install pillow google-genai</div>
+                    <p style="font-size: 0.85em; color: #8b4513; margin-top: 5px;">*If your system gives an "environment" error, just add <span style="color: #d2691e; font-weight: bold;">--break-system-packages</span> to the end of that command.</p>
+                    
+                    <h3 style="color: #5c4033; margin-top: 20px; margin-bottom: 10px;">3. Start the App</h3>
+                    <div class="code-block">python3 BenevolentGemini.py</div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- FOOTER -->
+        <div class="footer">
+            Developed & Designed by <strong>Dr. Bishnu Goswami</strong> github.com/bishnu-goswami/BenevolentGemini
+        </div>
+
+    </div>
+
+</body>
+</html>
